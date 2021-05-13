@@ -1,6 +1,9 @@
+import sqlite3
 
-
-
+#mi connetto al batabase
+conn = sqlite3.connect('immobili.db')
+#conn.execute('CREATE TABLE immobile (immobileid INTEGER PRIMARY KEY, propietario, indirizzo, prezzo, catalogo)')
+conn.execute('CREATE TABLE Catalogo (catalogoid INTEGER PRIMARY KEY, nome, prezzomin, prezzomax)')
 
 class Catalogo():
 
