@@ -3,8 +3,10 @@ import sqlite3
 #mi connetto al batabase
 conn = sqlite3.connect('immobili.db')
 #conn.execute('CREATE TABLE immobile (immobileid INTEGER PRIMARY KEY, propietario, indirizzo, prezzo, catalogo)')
-conn.execute('CREATE TABLE Catalogo (catalogoid INTEGER PRIMARY KEY, nome, prezzomin, prezzomax)')
-
+#conn.execute('CREATE TABLE Catalogo (catalogoid INTEGER PRIMARY KEY, nome, prezzomin, prezzomax)')
+curs = conn.cursor()
+curs.execute('insert into immobile values (?,?, ?, ?, ?)', (1,"michele","via mincio",20000, "Catalogo_prestigio"))
+#curs.execute('insert into Catalogo values (?, ?, ?)', ("di prestigio", 10000, 40000))
 class Catalogo():
 
     def __init__(self,nome,prezzomin,prezzomax):
